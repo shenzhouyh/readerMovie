@@ -1,0 +1,33 @@
+.user-avatar{
+    width:200rpx;
+    height:200rpx;
+    margin-top: 162rpx;
+    margin-bottom: 120rpx;
+}
+/*
+flex布局，弹性盒子模型
+ */
+.container{
+    /**
+    弹性盒子
+     */
+    display: flex;
+    /**
+    纵向分部
+     */
+    flex-direction: column;
+    /**
+    居中
+     */
+    align-items: center;
+}
+.username{
+    font-size: 32rpx;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
+.moto{
+    font-size: 32rpx;
+    font-weight: bold;
+    font-family: "Microsoft YaHei";
+}
