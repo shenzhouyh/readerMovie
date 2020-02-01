@@ -42,9 +42,8 @@ bind+冒号+事件类型名称
     - 都可以对事件进行绑定
     - catch可以阻止冒泡事件（父容器不会处理子容器已经响应的事件）
 - template模板文件的使用
-    - 模板声明:<template name="post-item"></template>
-   
-    - 模板的使用:<template is="post-item" data="{{item}}"></template>
+    - 模板声明：`<template name="post-item"></template>`
+    - 模板使用：`<template is="post-item" data="{{item}}"></template>`
     
     
     
