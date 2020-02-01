@@ -1,5 +1,10 @@
 {
   "pages":[
     "pages/welcome/welcome"
-  ]
+  ],
+  "window": {
+    "navigationBarBackgroundColor":"#b3d4db"
+  }
+
+
 }

@@ -20,14 +20,31 @@ flex布局，弹性盒子模型
     居中
      */
     align-items: center;
+    background-color: #b3d4db;
 }
 .username{
     font-size: 32rpx;
     font-weight: bold;
-    font-family: "Microsoft YaHei";
 }
 .moto{
-    font-size: 32rpx;
+    font-size: 22rpx;
     font-weight: bold;
-    font-family: "Microsoft YaHei";
+    line-height: 80rpx;
+    color:#405f80;
+}
+.moto-container{
+    margin-top: 200rpx;
+    border: 1px solid #405f80;
+    height: 80rpx;
+    width:200rpx;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/**
+设置页面整体的背景色，单纯设置container的背景色是不够的，需要设置page的
+ */
+page{
+    height: 100%;
+    background-color: #b3d4db;
 }
