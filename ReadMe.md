@@ -44,6 +44,11 @@ bind+冒号+事件类型名称
 - template模板文件的使用
     - 模板声明：`<template name="post-item"></template>`
     - 模板使用：`<template is="post-item" data="{{item}}"></template>`
+- 组件自定义属性
+    - 属性定义：data+属性名称
+    `<view catch:tap="TapPost" data-post-id="{{item.postId}}">`
+    - 属性获取：event.currentTarget.dataset.(属性名称，-省略，且驼峰优化)   
+    `let postId = event.currentTarget.dataset.postId;`
     
     
     
