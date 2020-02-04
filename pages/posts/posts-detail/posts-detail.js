@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+
   },
 
   /**
@@ -15,9 +16,24 @@ Page({
     const postId = options.id;
     const currentData = postData.postList[postId];
     this.setData({
-      postData:currentData
+      postData: currentData
     })
 
+  },
+  onCollection: function (options) {
+    wx.setStorage({
+      data: "CollectionIsTrue",
+      key: 'key',
+    })
+    wx.setStorage({
+      data: "todayissecondDay",
+      key: 'key1',
+    })
+  },
+  cancelCollection:function(){
+    wx.clearStorage({
+      complete: (res) => {console.log("已清空缓存")},
+    })
   },
 
   /**

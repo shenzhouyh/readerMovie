@@ -49,6 +49,13 @@ bind+冒号+事件类型名称
     `<view catch:tap="TapPost" data-post-id="{{item.postId}}">`
     - 属性获取：event.currentTarget.dataset.(属性名称，-省略，且驼峰优化)   
     `let postId = event.currentTarget.dataset.postId;`
+- 缓存 [小程序官方文档-缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html)
+    - 小程序缓存一旦设置是永久存在的，除非调用缓存管理方法
+    - 缓存相关常用的方法
+        - 设置缓存：wx.setStorage或setStorageSync
+        - 获取缓存：wx.getStorage或getStorageSync
+        - 移除缓存：wx.removeStorage或removeStorageSync
+        - 清空缓存：wx.clearStorage或clearStorageSync
     
     
     
