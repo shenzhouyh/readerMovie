@@ -14,27 +14,57 @@ Page({
    */
   onLoad: function (options) {
     const postId = options.id;
+    //保存ID，便于全局调用
+      this.data.postId = postId;
     const currentData = postData.postList[postId];
     this.setData({
       postData: currentData
-    })
+    });
+      let postsCollected = wx.getStorageSync("posts_collected");
+      //存在缓存则获取缓存
+      if(postsCollected){
+          const currentCollected = postsCollected[postId];
+          if(currentCollected){
+              this.setData({
+                  collected:currentCollected
+              })
+          }
+      }
+      //不存在缓存则放入缓存
+      else{
+          postsCollected = {};
+          postsCollected[postId]=false;
+          wx.setStorageSync("posts_collected",postsCollected);
+      }
+
 
   },
-  onCollection: function (options) {
-    wx.setStorage({
+    //点击收藏或者取消收藏
+    onCollectionTap:function(options){
+        let postsCollected = wx.getStorageSync("posts_collected");
+        let currentPost = postsCollected[this.data.postId];
+        currentPost =!currentPost;
+        postsCollected[this.data.postId] = currentPost;
+        //放入缓存
+        wx.setStorageSync("posts_collected",postsCollected);
+        //更新绑定变量
+        this.setData({
+            collected:currentPost
+        })
+
+
+    },
+  /*onCollection: function (options) {
+    wx.setStorageSync('key', data)({
       data: "CollectionIsTrue",
       key: 'key',
-    })
-    wx.setStorage({
-      data: "todayissecondDay",
-      key: 'key1',
     })
   },
   cancelCollection:function(){
     wx.clearStorage({
       complete: (res) => {console.log("已清空缓存")},
     })
-  },
+  },*/
 
   /**
    * 生命周期函数--监听页面初次渲染完成
