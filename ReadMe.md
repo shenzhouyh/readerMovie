@@ -56,7 +56,9 @@ bind+冒号+事件类型名称
         - 获取缓存：wx.getStorage或getStorageSync
         - 移除缓存：wx.removeStorage或removeStorageSync
         - 清空缓存：wx.clearStorage或clearStorageSync
-    
+- 界面交互 [小程序官方文档-界面交互](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showModal.html)
+    - showToast（title，icon，duration）  
+    - showModal，注意会函数中this的处理，可以使用另一个变量提前保存之后再使用
     
     
 #### 案例一：新闻阅读列表
