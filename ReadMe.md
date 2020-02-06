@@ -62,7 +62,10 @@ bind+冒号+事件类型名称
     - showActionSheet
 - 背景音频播放 [小程序官方文档-背景音频播放](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.html)
     - 获取BackgroundAudioManager对象 let audioManager = wx.getBackgroundAudioManager();
-        
+- 数据绑定的优点
+    - 全局变量的统一性和通用性，相比较于JS
+    - 便于赋值和更新
+    - 有利于单元测试        
 #### 案例一：新闻阅读列表
 ##### swiper组件
 - swiper-item的高宽，取决于外层swiper的高宽，swiper-item的高宽会默认设置为100% 
