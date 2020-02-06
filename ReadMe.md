@@ -59,8 +59,10 @@ bind+冒号+事件类型名称
 - 界面交互 [小程序官方文档-界面交互](https://developers.weixin.qq.com/miniprogram/dev/api/ui/interaction/wx.showModal.html)
     - showToast（title，icon，duration）  
     - showModal，注意会函数中this的处理，可以使用另一个变量提前保存之后再使用
-    
-    
+    - showActionSheet
+- 背景音频播放 [小程序官方文档-背景音频播放](https://developers.weixin.qq.com/miniprogram/dev/api/media/background-audio/BackgroundAudioManager.html)
+    - 获取BackgroundAudioManager对象 let audioManager = wx.getBackgroundAudioManager();
+        
 #### 案例一：新闻阅读列表
 ##### swiper组件
 - swiper-item的高宽，取决于外层swiper的高宽，swiper-item的高宽会默认设置为100% 

@@ -5,7 +5,9 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+    data: {
+        playAudio:false
+    },
 
     /**
      * 生命周期函数--监听页面加载
@@ -83,6 +85,29 @@ Page({
                 }
             }
         })
+    },
+    onPlayAudio:function(options){
+        //获取当前文章详情
+        const currentData = postData.postList[this.data.postId];
+        const src = currentData.music.url;
+        const title = currentData.music.title;
+        const coverImgUrl = currentData.music.coverImg;
+        //播放音乐
+        let audioManager = wx.getBackgroundAudioManager();
+        audioManager.src=src;//"http://music.163.com/song/media/outer/url?id=152428.mp3";
+        audioManager.title=title;//"朋友-谭咏麟";
+        audioManager.coverImgUrl=coverImgUrl;//"http://y.gtimg.cn/music/photo_new/T002R150x150M000004eGsCN3SUheO.jpg?max_age=2592000";
+        if(!this.data.playAudio){
+            audioManager.play();
+            this.setData({
+                playAudio:true
+            })
+        }else{
+            audioManager.pause();
+            this.setData({
+                playAudio:false
+            })
+        }
     },
     /*onCollection: function (options) {
       wx.setStorageSync('key', data)({
