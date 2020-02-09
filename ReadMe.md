@@ -44,6 +44,7 @@ bind+冒号+事件类型名称
 - template模板文件的使用
     - 模板声明：`<template name="post-item"></template>`
     - 模板使用：`<template is="post-item" data="{{item}}"></template>`
+    - 注意：template中涉及到路径时，尽量使用绝对路径，因为template会被多处调用，无法确定调用方的文件层级
 - 组件自定义属性
     - 属性定义：data+属性名称
     `<view catch:tap="TapPost" data-post-id="{{item.postId}}">`
