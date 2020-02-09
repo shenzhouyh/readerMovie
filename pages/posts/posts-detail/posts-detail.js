@@ -1,5 +1,6 @@
 // pages/posts/posts-detail/posts-detail.js
 const postData = require('../../../data/posts-data');
+const  app = getApp();
 Page({
 
     /**
@@ -36,8 +37,29 @@ Page({
             this.data.postsCollected[postId] = false;
             wx.setStorageSync("posts_collected", this.data.postsCollected);
         }
-
-
+        //从全局获取是否播放的值
+        if(app.globalData.g_isPlayingMusic){
+            this.setData({
+                playAudio:true
+            })
+        }
+        this.setMusicMonitor();
+    },
+    setMusicMonitor:function(){
+        const that = this;
+        let audioManager = wx.getBackgroundAudioManager();
+        audioManager.onPlay(function () {
+            that.setData({
+                playAudio:true
+            });
+            app.globalData.g_isPlayingMusic=true;
+        });
+        audioManager.onPause(function () {
+            that.setData({
+                playAudio:false
+            });
+            app.globalData.g_isPlayingMusic=false;
+        })
     },
     //点击收藏或者取消收藏
     onCollectionTap: function (options) {
