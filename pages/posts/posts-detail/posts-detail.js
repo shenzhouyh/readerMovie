@@ -38,7 +38,8 @@ Page({
             wx.setStorageSync("posts_collected", this.data.postsCollected);
         }
         //从全局获取是否播放的值
-        if(app.globalData.g_isPlayingMusic){
+        if(app.globalData.g_isPlayingMusic &&app.globalData.g_currentMusicPostId
+            ===postId){
             this.setData({
                 playAudio:true
             })
@@ -53,6 +54,7 @@ Page({
                 playAudio:true
             });
             app.globalData.g_isPlayingMusic=true;
+            app.globalData.g_currentMusicPostId=that.data.postId;
         });
         audioManager.onPause(function () {
             that.setData({
