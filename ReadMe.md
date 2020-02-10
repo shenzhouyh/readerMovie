@@ -34,10 +34,15 @@ bind+冒号+事件类型名称
     wx.redirectTo({
             url:'../posts/posts'
         })
+    - 方式三：switchTab
+    wx.switchTab({
+            url:'../posts/posts'
+        })
         
     - 方式对比
         1、navigateTo在跳转之后会有返回按钮，而redirectTo是没有的
         2、navigateTo在跳转之后，会调用页面周期函数onHide，而redirectTo则是调用onUnload
+        3、switchTab跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面
 - bind和catch
     - 都可以对事件进行绑定
     - catch可以阻止冒泡事件（父容器不会处理子容器已经响应的事件）
@@ -50,6 +55,9 @@ bind+冒号+事件类型名称
     `<view catch:tap="TapPost" data-post-id="{{item.postId}}">`
     - 属性获取：event.currentTarget.dataset.(属性名称，-省略，且驼峰优化)   
     `let postId = event.currentTarget.dataset.postId;`
+    - currentTarget和target的区别
+        - currentTarget：指的是事件捕获的组件
+        - target：指的是当前操作的组件
 - 缓存 [小程序官方文档-缓存](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorageSync.html)
     - 小程序缓存一旦设置是永久存在的，除非调用缓存管理方法
     - 缓存相关常用的方法
@@ -83,5 +91,8 @@ bind+冒号+事件类型名称
     }
     `
 - 使用小程序缓存，实现文章的收藏功能
+
+#### 电影资讯页面
+
 
 

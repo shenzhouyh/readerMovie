@@ -15,6 +15,15 @@ Page({
         });
         console.log("postId is "+ postId)
     },
+    onSwiperTap:function(event){
+        //target指的是image组件
+        //currentTartget指的是swiper组件
+        let postId = event.target.dataset.postId;
+        wx.navigateTo({
+            url:"posts-detail/posts-detail?id="+postId
+        });
+        console.log("postId is "+ postId)
+    },
 
     /**
      * 生命周期函数--监听页面加载
@@ -22,6 +31,10 @@ Page({
     onLoad: function (options) {
         this.setData({
             posts_key:postData.postList
+        });
+        wx.setTabBarItem({
+          index: 0,
+          
         })
     },
 
