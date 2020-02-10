@@ -1,0 +1,6 @@
+<import src="movie-list/movie-list"/>
+<view>
+    <template is="movie-list"/>
+    <template is="movie-list"/>
+    <template is="movie-list"/>
+</view>

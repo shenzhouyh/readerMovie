@@ -76,11 +76,14 @@ bind+冒号+事件类型名称
     - 便于赋值和更新
     - 有利于单元测试        
 #### 案例一：新闻阅读列表
+
 ##### swiper组件
+
 - swiper-item的高宽，取决于外层swiper的高宽，swiper-item的高宽会默认设置为100% 
 - swiper和swiper-item的本质都是容器，这就意味着内部可以防止任意内容，应用具备高度灵活性
 - swiper组件的常用属性， [小程序开发文档-swiper组件](https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html)
 ##### 从数据文件中读取数据（代替从服务端获取数据）
+
 - 使用require获取JS模块文件
     - require加载文件路径只能使用相对路径，不能使用绝对路径
     `const postData = require('../../data/posts-data');
@@ -93,6 +96,9 @@ bind+冒号+事件类型名称
 - 使用小程序缓存，实现文章的收藏功能
 
 #### 电影资讯页面
+##### 模板的嵌套使用
+    
+- 评分组件模板、电影模板、电影列表模板，从小模板写起
 
 
 
